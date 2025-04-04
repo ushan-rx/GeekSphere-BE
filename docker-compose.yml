@@ -9,12 +9,11 @@ services:
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: auth           # This creates the 'auth' database
     ports:
-      - "5432:5432"
+      - "5431:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - mynetwork
-
 
 volumes:
   postgres_data:
@@ -22,3 +21,4 @@ volumes:
 networks:
   mynetwork:
     driver: bridge
+
