@@ -37,6 +37,7 @@ public class PostServiceImpl implements PostService {
             post.setUserId(postRequest.getUserId());
             post.setDescription(postRequest.getDescription());
             post.setUrl(cloudinaryService.uploadFile(postRequest.getFile(), "folder_1"));
+            post.setTags(postRequest.getTags());
 
             // Set the date and time fields
             post.setDate(new Date(System.currentTimeMillis()));
@@ -92,6 +93,11 @@ public class PostServiceImpl implements PostService {
             // Check and update the description
             if (postRequest.getDescription() != null && !postRequest.getDescription().isEmpty()) {
                 post.setDescription(postRequest.getDescription());
+            }
+
+            // Update tags if provided
+            if (postRequest.getTags() != null) {
+                post.setTags(postRequest.getTags());
             }
 
             // Check if there's a file to upload

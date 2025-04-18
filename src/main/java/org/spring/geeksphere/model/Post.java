@@ -21,6 +21,8 @@ public class Post {
 
     private String url;
 
+    private List<String> tags;
+
     private List<Comment> comments;
     private List<Like> likes;
 
